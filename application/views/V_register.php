@@ -13,7 +13,7 @@
 <section class="section-head">
     <div class="container">
         <p class="text-center">
-            <h3 style="color:white !important;margin-top:40px">Login</h3>
+            <h3 style="color:white !important;margin-top:40px">Register (daftar)</h3>
         </p>
     </div>
 </section>
@@ -29,10 +29,22 @@
                     <?php endif; ?>
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title center text-center">Login</h3>
+                            <h3 class="panel-title center text-center">Daftar</h3>
                         </div>
                         <div class="panel-body">
-                            <form action="<?=base_url()?>index.php/C_auth/login" method="post">
+                            <form action="<?=base_url()?>index.php/C_auth/register" method="post">
+                                <div class="form-group">
+                                    <input type="text" name="nama" class="form-control" id="nama" placeholder="nama" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" name="email" class="form-control" id="email" placeholder="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <textarea  rows="3" style="width:100% !important" name="alamat" placeholder="alamat" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="nohp" class="form-control" id="nomorhp" placeholder="nomor hp" required>
+                                </div>
                                 <div class="form-group">
                                     <input type="text" name="username" class="form-control" id="username" placeholder="username" required>
                                 </div>
@@ -40,10 +52,13 @@
                                     <input type="password" name="password" class="form-control" id="password" placeholder="password" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="submit" name="submit" value="Login" class="btn btn-primary" style="width:100% !important">
+                                    <input type="password" name="kpassword" class="form-control" id="password" placeholder="ulangi password" required>
                                 </div>
                                 <div class="form-group">
-                                  <p class="help-block">Belum punya akun? daftar disini &raquo; <a href="<?=base_url()?>index.php/C_auth/regispage">Daftar</a> </p>
+                                    <input type="submit" name="submit" value="Daftar" class="btn btn-primary" style="width:100% !important">
+                                </div>
+                                <div class="form-group">
+                                  <p class="help-block">Sudah punya akun? masuk disini &raquo; <a href="<?=base_url()?>index.php/C_auth">Masuk</a> </p>
                                 </div>
                             </form>
                         </div>

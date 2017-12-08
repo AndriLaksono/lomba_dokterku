@@ -39,7 +39,7 @@ Class C_auth extends CI_Controller{
 
         redirect('C_start');
       }else{
-        $this->session->set_flashdata('pesan',"kata sandi atau username tidak cocok..");
+        $this->session->set_flashdata('pesan',"data yang anda masukan tidak cocok dengan data kami..");
         redirect('C_auth');
       }
     }
@@ -69,9 +69,12 @@ Class C_auth extends CI_Controller{
           'status'    => 0
       );
       $this->M_auth->doregister($data);
+
+      $this->session->set_flashdata('pesan',"Terimakasih sudah mendaftar, silahkan tunggu beberapa saat dan anda bisa menggunakan akun anda..");
+      return redirect('C_auth');
     }else {
-      $this->session->set_flashdata('pesan',"password tidak sama...");
-      redirect('C_auth');
+        $this->session->set_flashdata('pesan',"password tidak sama...");
+        redirect('C_auth/regispage');
     }
   }
 

@@ -20,6 +20,12 @@
         padding: 20px;
     }
 </style>
+
+<?php
+  $gejalaarr[] = '';
+  $checked = '';
+?>
+
 <section class="section-dark" style="background-color:#5D382C;height:100px;margin-top:-50px !important">
     <div class="container">
         <p class="text-center">
@@ -30,14 +36,14 @@
 
 <div class="container">
     <br>
-    <a href="#!" class="btn btn-default">&laquo;Kembali</a>
+    <a href="<?=base_url()?>index.php/C_relasi" class="btn btn-default">&laquo;Kembali</a>
     <br><br>
 </div>
 
 <div class="container">
     <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-10">
-            <form action="index.html" method="post">
+            <form action="<?=base_url()?>index.php/C_relasi/update" method="post">
 
                 <div class="form-group">
                     <div class="row">
@@ -49,30 +55,30 @@
                 </div>
                 <div class="form-group kotakan">
                     <div class="row">
+                      <input type="hidden" name="id" value="<?=$diagnosa->id_diagnosa?>">
+                      <?php
+                      $i = 0;
+                      foreach ($relasi as $x):
+                        $gejalaarr[$i] = $x->id_gejala;
+                        $i++;
+                      endforeach; ?>
+                      <?php
+                        $n = 0;
+                        foreach ($gejala as $y):
+                          $checked = '';
+                          for ($n=0; $n < $i ; $n++) {
+                            if ($gejalaarr[$n] == $y->id_gejala):
+                              $checked = 'checked';
+                            endif;
+                          }
+                      ?>
                       <div class="col-sm-12 col-md-6 col-lg-3">
-                          <input type="checkbox" class="form-control checkbox" id="ck1">
-                          <label for="ck1">Sehatt</label>
+                          <input type="checkbox" name="gejala[]" value="<?=$y->id_gejala?>" <?php echo $checked;?> id="<?=$y->gejala?>" class="form-control checkbox">
+                          <label for="<?=$y->gejala?>"><?=$y->gejala?></label>
                       </div>
-                      <div class="col-sm-12 col-md-6 col-lg-3">
-                          <input type="checkbox" class="form-control checkbox" id="ck2">
-                          <label for="ck2">Kuat</label>
-                      </div>
-                      <div class="col-sm-12 col-md-6 col-lg-3">
-                          <input type="checkbox" class="form-control checkbox" id="ck3">
-                          <label for="ck3">bergizi</label>
-                      </div>
-                      <div class="col-sm-12 col-md-6 col-lg-3">
-                          <input type="checkbox" class="form-control checkbox" id="ck4">
-                          <label for="ck4">mantapp</label>
-                      </div>
-                      <div class="col-sm-12 col-md-6 col-lg-3">
-                          <input type="checkbox" class="form-control checkbox" id="ck5">
-                          <label for="ck5">menyegarkan</label>
-                      </div>
-                      <div class="col-sm-12 col-md-6 col-lg-3">
-                          <input type="checkbox" class="form-control checkbox" id="ck6">
-                          <label for="ck6">heemmmm</label>
-                      </div>
+                      <?php
+                        endforeach;
+                      ?>
                     </div>
                 </div>
 

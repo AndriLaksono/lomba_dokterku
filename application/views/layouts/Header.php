@@ -40,7 +40,8 @@
                     <li><a href="#!">Dokter</a></li>
                     <li><a href="<?=base_url()?>index.php/C_auth/logout">Logout</a></li>
                 <?php else: ?>
-                    <li><a href="<?=base_url()?>index.php/C_auth">Login</a></li>
+                    <li><a href="<?=base_url()?>index.php/C_auth">Masuk</a></li>
+                    <li><a href="<?=base_url()?>index.php/C_auth/regispage">Daftar</a></li>
                 <?php endif; ?>
               </ul>
             </div><!-- /.navbar-collapse -->

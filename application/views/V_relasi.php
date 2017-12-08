@@ -10,10 +10,10 @@
         color: white;
     }
 </style>
-<section class="section-dark" style="background-color:#5D382C;height:100px;margin-top:-50px !important">
+<section class="section-head">
     <div class="container">
         <p class="text-center">
-            <h3 style="color:white !important">Relasi</h3>
+            <h3 style="color:white !important;margin-top:40px">Relasi</h3>
         </p>
     </div>
 </section>
@@ -36,11 +36,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Demam berdarah</td>
-                        <td> <a href="#!" class="btn btn-default">Detail gejala</a> </td>
-                    </tr>
+                    <?php foreach ($diagnosa as $data): ?>
+                        <tr>
+                            <td><?php echo $data->id_diagnosa ?></td>
+                            <td><?php echo $data->penyakit ?></td>
+                            <td> <a href="<?=base_url()?>index.php/C_relasi/edit/<?=$data->id_diagnosa?>" class="btn btn-default">Detail gejala</a> </td>
+                        </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
