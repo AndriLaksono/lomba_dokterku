@@ -27,54 +27,54 @@
         <div class="panel panel-default">
             <div class="panel-heading font-bold">Tambah Dokter</div>
             <div class="panel-body">
-              <form class="bs-example form-horizontal">
+              <form class="bs-example form-horizontal" action="<?=base_url()?>index.php/admin/c_admin/tambahdokter" method="post">
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Nama</label>
                   <div class="col-sm-10 col-md-6">
-                    <input type="text" class="form-control" placeholder="Nama">
+                    <input type="text" class="form-control" name="nama" placeholder="Nama">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Username</label>
                   <div class="col-sm-10 col-md-6">
-                    <input type="text" class="form-control" placeholder="Username">
+                    <input type="text" class="form-control" name="username" placeholder="Username">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Password</label>
                   <div class="col-sm-10 col-md-6">
-                    <input type="password" class="form-control" placeholder="Password">
+                    <input type="password" class="form-control" name="password" placeholder="Password">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Alamat</label>
                   <div class="col-sm-10 col-md-6">
-                    <textarea name="name" rows="8" cols="80" class="form-control" placeholder="alamat"></textarea>
+                    <textarea name="alamat" rows="8" cols="80" class="form-control" placeholder="alamat"></textarea>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Nomor HP</label>
                   <div class="col-sm-10 col-md-6">
-                    <input type="text" class="form-control" placeholder="Nomor HP">
+                    <input type="text" class="form-control" name="nohp" placeholder="Nomor HP">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Select</label>
                   <div class="col-sm-10 col-md-6">
                     <select name="spesialis" class="form-control m-b">
-                      <option>Penyakit dalam</option>
-                      <option>Anak</option>
-                      <option>Gigi</option>
-                      <option>THT</option>
-                      <option>Kulit</option>
-                      <option>Mata</option>
-                      <option>Syaraf</option>
-                      <option>Gizi</option>
+                      <option value="1">Anak</option>
+                      <option value="2">Gigi</option>
+                      <option value="3">THT</option>
+                      <option value="4">Kulit</option>
+                      <option value="5">Mata</option>
+                      <option value="6">Syaraf</option>
+                      <option value="7">Gizi</option>
                     </select>
                   </div>
                 <div class="form-group">
                   <div class="col-lg-offset-2 col-sm-10">
                     <button type="submit" class="btn btn-sm btn-info">Tambahkan</button>
+
                   </div>
                 </div>
               </form>

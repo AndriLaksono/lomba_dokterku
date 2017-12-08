@@ -37,16 +37,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Demam berdarah</td>
-                            <td>120</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Stress</td>
-                            <td>110</td>
-                        </tr>
+                        <?php foreach ($gejala as $d): ?>
+                          <tr>
+                              <td><?=$d->id_diagnosa?></td>
+                              <td><?=$d->penyakit?></td>
+                              <td><?=$d->jumlah?></td>
+                          </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>

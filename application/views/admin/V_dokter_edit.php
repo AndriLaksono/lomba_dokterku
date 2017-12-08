@@ -25,56 +25,57 @@
 <div class="container" style="padding-left:30px;padding-right:50px">
     <div class="row">
         <div class="panel panel-default">
-            <div class="panel-heading font-bold">Edit Dokter</div>
+            <div class="panel-heading font-bold">Tambah Dokter</div>
             <div class="panel-body">
-              <form class="bs-example form-horizontal">
+              <form class="bs-example form-horizontal" action="<?=base_url()?>index.php/admin/c_admin/updatedokter" method="post">
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Nama</label>
                   <div class="col-sm-10 col-md-6">
-                    <input type="text" class="form-control" placeholder="Nama" value="Dokter Thomas">
+                    <input type="text" class="form-control" name="nama" placeholder="Nama" value="<?=$dokter->nama?>">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Username</label>
                   <div class="col-sm-10 col-md-6">
-                    <input type="text" class="form-control" placeholder="Username" value="thomas">
+                    <input type="text" class="form-control" name="username" placeholder="Username" value="<?=$dokter->username?>">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Password</label>
                   <div class="col-sm-10 col-md-6">
-                    <input type="password" class="form-control" placeholder="Password" value="thomas">
+                    <input type="password" class="form-control" name="password" placeholder="Password" required>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Alamat</label>
                   <div class="col-sm-10 col-md-6">
-                    <textarea name="name" rows="8" cols="80" class="form-control" placeholder="alamat">Purwokerto, Jawa Tengah</textarea>
+                    <textarea name="alamat" rows="8" cols="80" class="form-control" placeholder="alamat"><?=$dokter->alamat?></textarea>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Nomor HP</label>
                   <div class="col-sm-10 col-md-6">
-                    <input type="text" class="form-control" placeholder="Nomor HP" value="087888212221">
+                    <input type="text" class="form-control" name="nohp" placeholder="Nomor HP" value="<?=$dokter->nohp?>">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Select</label>
                   <div class="col-sm-10 col-md-6">
                     <select name="spesialis" class="form-control m-b">
-                      <option>Penyakit dalam</option>
-                      <option selected>Anak</option>
-                      <option>Gigi</option>
-                      <option>THT</option>
-                      <option>Kulit</option>
-                      <option>Mata</option>
-                      <option>Syaraf</option>
-                      <option>Gizi</option>
+                      <option value="1">Anak</option>
+                      <option value="2">Gigi</option>
+                      <option value="3">THT</option>
+                      <option value="4">Kulit</option>
+                      <option value="5">Mata</option>
+                      <option value="6">Syaraf</option>
+                      <option value="7">Gizi</option>
                     </select>
                   </div>
                 <div class="form-group">
                   <div class="col-lg-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-sm btn-info">Update</button>
+
+                      <input type="hidden" name="id_dokter" value="<?=$dokter->id_dokter?>">
+                    <button type="submit" class="btn btn-sm btn-info">Tambahkan</button>
                   </div>
                 </div>
               </form>

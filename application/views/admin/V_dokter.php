@@ -26,7 +26,7 @@
     <div class="row">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <a href="#!" class="btn btn-default">Tambah dokter</a>
+                <a href="<?=base_url()?>index.php/admin/c_admin/dokter_add" class="btn btn-default">Tambah dokter</a>
             </div>
             <div class="table-responsive">
                 <table class="table table-striped b-t b-light">
@@ -38,22 +38,40 @@
                             <th>Alamat</th>
                             <th>NO HP</th>
                             <th>Spesialis</th>
-                            <td></td>
+                            <td>Status</td>
+                            <td>Action</td>
                         </tr>
                     </thead>
                     <tbody>
+                      <?php foreach ($dokter as $d): ?>
                         <tr>
-                            <td>D001</td>
-                            <td>Dokter Thomas</td>
-                            <td>thomas</td>
-                            <td>Purwokerto, Jawa Tengah</td>
-                            <td>087888212221</td>
-                            <td>Spesialis mata</td>
+                            <td><?=$d->id_dokter?></td>
+                            <td><?=$d->nama?></td>
+                            <td><?=$d->username?></td>
+                            <td><?=$d->alamat?></td>
+                            <td><?=$d->nohp?></td>
+                            <td><?=$d->id_spesialis?></td>
+                            <td><?php if($d->status==1){
+                              echo 'aktif';
+                            }else{
+                              echo 'tidak aktif';
+                            }
+
+                            ?>
+                          </td>
                             <td>
-                                <a href="#" class="btn btn-default">edit</a>
-                                <a href="#" class="btn btn-danger">hapus</a>
+                                <?php if($d->status==1){ ?>
+                                        <a href="<?=base_url()?>index.php/admin/c_admin/updatestatus/<?=$d->id_dokter?>/0" class="btn btn-danger">Nonaktif</a>
+                                      <?php }else{ ?>
+                                        <a href="<?=base_url()?>index.php/admin/c_admin/updatestatus/<?=$d->id_dokter?>/1" class="btn btn-primary">Aktif</a>
+                                    <?php } ?>
+                                <a href="<?=base_url()?>index.php/admin/c_admin/dokter_edit/<?=$d->id_dokter?>" class="btn btn-default">edit</a>
+
+                                <a href="<?=base_url()?>index.php/admin/c_admin/hapusdokter/<?=$d->id_dokter?>" class="btn btn-danger">hapus</a>
                             </td>
                         </tr>
+                      <?php endforeach; ?>
+
                     </tbody>
                 </table>
             </div>

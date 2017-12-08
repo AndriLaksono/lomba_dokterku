@@ -84,19 +84,19 @@
                     <span>Navigation</span>
                   </li>
                   <li>
-                    <a href="<?=base_url()?>index.php/C_admin/diagnosa">
+                    <a href="<?=base_url()?>index.php/admin/C_admin/diagnosa">
                       <i class="glyphicon glyphicon-briefcase icon"></i>
                       <span>Diagnosa</span>
                     </a>
                   </li>
                   <li>
-                    <a href="<?=base_url()?>index.php/C_admin/dokter">
+                    <a href="<?=base_url()?>index.php/admin/C_admin/dokter">
                       <i class="icon-user icon text-success-lter"></i>
                       <span>Dokter</span>
                     </a>
                   </li>
                   <li>
-                    <a href="<?=base_url()?>index.php/C_admin/pasien">
+                    <a href="<?=base_url()?>index.php/admin/C_admin/pasien">
                       <i class="icon-user icon"></i>
                       <span>Pasien</span>
                     </a>

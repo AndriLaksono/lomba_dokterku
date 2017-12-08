@@ -41,17 +41,19 @@
                         </tr>
                     </thead>
                     <tbody>
+                      <?php foreach ($nonaktif as $d ): ?>
                         <tr>
-                            <td>hanif</td>
-                            <td>hanif</td>
-                            <td>Purwokerto, Jawa Tengah</td>
-                            <td>085588212441</td>
-                            <td>hanif@gmail.com</td>
+                            <td><?=$d->nama?></td>
+                            <td><?=$d->username?></td>
+                            <td><?=$d->alamat?></td>
+                            <td><?=$d->nohp?></td>
+                            <td><?=$d->email?></td>
                             <td>
-                                <a href="#" class="btn btn-success">terima</a>
-                                <a href="#" class="btn btn-danger">tolak</a>
+                                  <a href="<?=base_url()?>index.php/admin/c_admin/updatepasien/<?=$d->id_pasien?>/1" class="btn btn-success">terima</a>
+                                  <a href="<?=base_url()?>index.php/admin/c_admin/hapuspasien/<?=$d->id_pasien?>" class="btn btn-danger">tolak</a>
                             </td>
                         </tr>
+                      <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
@@ -81,17 +83,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>hasirun</td>
-                            <td>hasirun</td>
-                            <td>Purwokerto, Jawa Tengah</td>
-                            <td>087888212221</td>
-                            <td>hasirun@gmail.com</td>
-                            <td>
-                                <a href="#" class="btn btn-danger">hapus</a>
-                            </td>
-                        </tr>
+                        <?php foreach ($aktif as $d ): ?>
+                          <tr>
+                              <td><?=$d->id_pasien?></td>
+                              <td><?=$d->nama?></td>
+                              <td><?=$d->username?></td>
+                              <td><?=$d->alamat?></td>
+                              <td><?=$d->nohp?></td>
+                              <td><?=$d->email?></td>
+                              <td>
+                                  <a href="<?=base_url()?>index.php/admin/c_admin/hapuspasien/<?=$d->id_pasien?>" class="btn btn-danger">hapus</a>
+                              </td>
+                          </tr>
+                        <?php endforeach; ?>
+
                     </tbody>
                 </table>
             </div>
