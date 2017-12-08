@@ -13,28 +13,29 @@
 <section class="section-head">
     <div class="container">
         <p class="text-center">
-            <h3 style="color:white !important;margin-top:40px">Diagnosa</h3>
+            <h3 style="color:white !important;margin-top:40px">Pengobatan <?=$title->penyakit?></h3>
         </p>
     </div>
 </section>
 
 <div class="container">
     <br>
-    <a href="<?=base_url()?>index.php/C_dokter" class="btn btn-default">&laquo;Kembali</a>
+    <a href="<?=base_url()?>index.php/C_diagnosa/" class="btn btn-default">&laquo;Kembali</a>
     <br><br>
 </div>
 
 <div class="container">
     <div class="row">
         <div class="col-sm-12 col-md-9 col-lg-7 col-lg-offset-1">
-            <form action="<?=base_url()?>index.php/C_diagnosa/do_insert" method="post">
+            <form action="<?=base_url()?>index.php/C_diagnosa/do_insert_obat" method="post">
                 <div class="form-group">
-                  <label for="name">Penyakit</label>
-                  <input type="text" class="form-control" id="name" placeholder="nama penyakit" name="penyakit" required>
+                  <label for="penyakit">Penyakit</label>
+                  <input type="hidden" name="id_penyakit" value="<?=$diagnosa->id_diagnosa?>">
+                  <input type="text" class="form-control" name="penyakit" value="<?=$diagnosa->penyakit?>" readonly>
                 </div>
                 <div class="form-group">
-                  <label for="keterangan">Keterangan</label>
-                      <textarea  rows="7" style="width:100% !important" name="keterangan" required></textarea>
+                  <label for="keterangan">Cara Pengobatan</label>
+                      <textarea  rows="7" class="form-control" style="width:100% !important" name="cara" required></textarea>
                 </div>
                 <!-- <div class="form-group">
                   <label for="keterangan">Pengobatan alternatif</label>
@@ -58,23 +59,18 @@
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Penyakit</th>
-                    <th>Keterangan</th>
+                    <th>Cara Pengobatan</th>
                     <!-- <th>Pengobatan alternatif</th> -->
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($diagnosa as $d): ?>
+                <?php foreach ($pengobatan as $d): ?>
                     <tr>
-                        <td><?=$d->id_diagnosa?></td>
-                        <td><?=$d->penyakit?></td>
-                        <td><?=$d->ket?></td>
+                        <td><?=$d->cara_pengobatan?></td>
                         <td>
-                          <a class="btn btn-default" href="<?=base_url()?>index.php/C_diagnosa/show_pengobatan/<?=$d->id_diagnosa?>">Data Pengobatan</a> &nbsp;
-                          <a class="btn btn-default" href="<?=base_url()?>index.php/C_diagnosa/update/<?=$d->id_diagnosa?>">Edit</a> &nbsp;
-                          <a class="btn btn-danger" href="<?=base_url()?>index.php/C_diagnosa/do_delete/<?=$d->id_diagnosa?>">Hapus</a>
+                          <a class="btn btn-default" href="<?=base_url()?>index.php/C_diagnosa/update_obat/<?=$d->id_pengobatan?>">Edit</a> &nbsp;
+                          <a class="btn btn-danger" href="<?=base_url()?>index.php/C_diagnosa/do_delete_obat/<?=$d->id_pengobatan?>">Hapus</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

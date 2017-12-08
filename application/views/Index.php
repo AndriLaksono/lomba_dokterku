@@ -74,64 +74,64 @@
             <br>
         </div>
         <div class="row">
-            <div class="col-md-3">
-                <a href="#!" class="icon-8-depan">
+            <div class="col-xs-6 col-sm-6 col-md-3">
+                <a href="<?=base_url()?>index.php/C_konsultasi/index/1" class="icon-8-depan">
                     <p class="text-center">
                         <img src="<?=base_url()?>assets/images/front/penyakit-dalam.png" alt="" width="70%">
                         <h5 class="text-center white-text">Penyakit dalam</h5>
                     </p>
                 </a>
             </div>
-            <div class="col-md-3">
-                <a href="#!" class="icon-8-depan">
+            <div class="col-xs-6 col-sm-6 col-md-3">
+                <a href="<?=base_url()?>index.php/C_konsultasi/index/2" class="icon-8-depan">
                     <p class="text-center">
                         <img src="<?=base_url()?>assets/images/front/anak.png" alt="" width="70%">
                         <h5 class="text-center white-text">Anak</h5>
                     </p>
                 </a>
             </div>
-            <div class="col-md-3">
-                <a href="#!" class="icon-8-depan">
+            <div class="col-xs-6 col-sm-6 col-md-3">
+                <a href="<?=base_url()?>index.php/C_konsultasi/index/3" class="icon-8-depan">
                     <p class="text-center">
                         <img src="<?=base_url()?>assets/images/front/gigi.png" alt="" width="70%">
                         <h5 class="text-center white-text">Gigi</h5>
                     </p>
                 </a>
             </div>
-            <div class="col-md-3">
-                <a href="#!" class="icon-8-depan">
+            <div class="col-xs-6 col-sm-6 col-md-3">
+                <a href="<?=base_url()?>index.php/C_konsultasi/index/4" class="icon-8-depan">
                     <p class="text-center">
                         <img src="<?=base_url()?>assets/images/front/tht.png" alt="" width="70%">
                         <h5 class="text-center white-text">THT</h5>
                     </p>
                 </a>
             </div>
-            <div class="col-md-3">
-                <a href="#!" class="icon-8-depan">
+            <div class="col-xs-6 col-sm-6 col-md-3">
+                <a href="<?=base_url()?>index.php/C_konsultasi/index/5" class="icon-8-depan">
                     <p class="text-center">
                         <img src="<?=base_url()?>assets/images/front/kulit.png" alt="" width="70%">
                         <h5 class="text-center white-text">Kulit</h5>
                     </p>
                 </a>
             </div>
-            <div class="col-md-3">
-                <a href="#!" class="icon-8-depan">
+            <div class="col-xs-6 col-sm-6 col-md-3">
+                <a href="<?=base_url()?>index.php/C_konsultasi/index/6" class="icon-8-depan">
                     <p class="text-center">
                         <img src="<?=base_url()?>assets/images/front/mata.png" alt="" width="70%">
                         <h5 class="text-center white-text">Mata</h5>
                     </p>
                 </a>
             </div>
-            <div class="col-md-3">
-                <a href="#!" class="icon-8-depan">
+            <div class="col-xs-6 col-sm-6 col-md-3">
+                <a href="<?=base_url()?>index.php/C_konsultasi/index/7" class="icon-8-depan">
                     <p class="text-center">
                         <img src="<?=base_url()?>assets/images/front/saraf.png" alt="" width="70%">
                         <h5 class="text-center white-text">Syaraf</h5>
                     </p>
                 </a>
             </div>
-            <div class="col-md-3">
-                <a href="#!" class="icon-8-depan">
+            <div class="col-xs-6 col-sm-6 col-md-3">
+                <a href="<?=base_url()?>index.php/C_konsultasi/index/8" class="icon-8-depan">
                     <p class="text-center">
                         <img src="<?=base_url()?>assets/images/front/gizi.png" alt="" width="70%">
                         <h5 class="text-center white-text">Gizi</h5>

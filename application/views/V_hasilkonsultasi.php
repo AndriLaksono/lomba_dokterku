@@ -21,15 +21,19 @@
 <div class="container">
     <section class="section-white">
         <div class="center text-center">
-            <?php foreach ($hasil as $x): ?>
-                <h3 style="padding:20px">Anda memiliki penyakit <?php echo $x->penyakit;?> </h3>
-            <?php endforeach; ?>
-                <h4 style="padding:20px">Alternatif pengobatan yang bisa Anda lakukan :</h1>
-                <ul>
-                  <?php foreach ($obat as $x): ?>
-                    <li><?php echo $x->cara_pengobatan;?></li>
-                  <?php endforeach; ?>
-                </ul>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+                <?php foreach ($hasil as $x): ?>
+                    <h3 style="padding:20px">Anda memiliki penyakit <b><?php echo $x->penyakit;?></b></h3>
+                <?php endforeach; ?>
+                    <h4 style="padding:20px">Alternatif pengobatan yang bisa Anda lakukan :</h1>
+                    <ul class="list-group">
+                      <?php foreach ($obat as $x): ?>
+                        <li class="list-group-item"><?php echo $x->cara_pengobatan;?></li>
+                      <?php endforeach; ?>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 </div>

@@ -7,7 +7,7 @@ Class M_konsultasi extends CI_Model{
     parent::__construct();
   }
 
-  public function getData($offset = 0 ,$where = NULL)
+  public function getData($id_spesialis, $offset = 0 ,$where = NULL)
   {
       if($where != NULL){
         foreach ($where as $key => $value) {
@@ -19,6 +19,7 @@ Class M_konsultasi extends CI_Model{
       $this->db->join('relasi','diagnosa.id_diagnosa = relasi.id_diagnosa');
       $this->db->join('gejala','gejala.id_gejala = relasi.id_gejala');
       $this->db->limit('1',$offset);
+      $this->db->where('relasi.id_spesialis',$id_spesialis);
       $this->db->order_by('diagnosa.id_diagnosa');
       $data = $this->db->get('diagnosa');
 
@@ -47,15 +48,17 @@ Class M_konsultasi extends CI_Model{
     return TRUE;
   }
 
-  public function CountData($id_diagnosa)
+  public function CountData($id_spesialis, $id_diagnosa)
   {
+    $this->db->where('id_spesialis',$id_spesialis);
     $this->db->where('id_diagnosa',$id_diagnosa);
     $data = $this->db->get('relasi');
     return $data->num_rows();
   }
 
-  public function GetResult($id_diagnosa)
+  public function GetResult($id_spesialis,$id_diagnosa)
   {
+    $this->db->where('id_spesialis',$id_spesialis);
     $this->db->where('id_diagnosa',$id_diagnosa);
     $data = $this->db->get('diagnosa');
     return $data->result();

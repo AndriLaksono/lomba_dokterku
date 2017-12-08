@@ -34,7 +34,7 @@
               <ul class="nav navbar-nav">
                 <li><a href="<?=base_url()?>">Home</a></li>
                 <?php if ($this->session->userdata('id_pasien')): ?>
-                    <li><a href="#">Log pemeriksaan</a></li>
+                    <li><a href="<?=base_url()?>index.php/C_log">Log pemeriksaan</a></li>
                     <li><a href="<?=base_url()?>index.php/C_auth/logout">Logout</a></li>
                 <?php elseif($this->session->userdata('id_dokter')): ?>
                     <li><a href="<?=base_url()?>index.php/C_dokter">Dokter</a></li>
