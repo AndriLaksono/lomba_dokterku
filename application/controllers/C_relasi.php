@@ -5,6 +5,9 @@ Class C_relasi extends CI_Controller {
   {
     parent::__construct();
     $this->load->model('M_relasi');
+    if (!$this->session->userdata('id_dokter')) {
+        return redirect('C_start');
+    }
   }
 
   public function index()

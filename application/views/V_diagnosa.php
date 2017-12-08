@@ -20,7 +20,7 @@
 
 <div class="container">
     <br>
-    <a href="#!" class="btn btn-default">&laquo;Kembali</a>
+    <a href="<?=base_url()?>index.php/C_dokter" class="btn btn-default">&laquo;Kembali</a>
     <br><br>
 </div>
 

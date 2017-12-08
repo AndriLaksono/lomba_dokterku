@@ -26,7 +26,7 @@ Class C_auth extends CI_Controller{
       $this->session->set_userdata('nohp',$data['dokter']->nohp);
       $this->session->set_userdata('spesialis',$data['dokter']->id_spesialis);
 
-      redirect('C_start');
+      redirect('C_dokter');
     }else{
       $data['pasien'] = $this->M_auth->dologin($username,$password,'pasien');
       if ($data['pasien']!=NULL) {

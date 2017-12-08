@@ -27,7 +27,7 @@
           <i class="glyphicon glyphicon-align-justify"></i>
         </button>
         <!-- brand -->
-        <a href="#/" class="navbar-brand text-lt">
+        <a href="<?=base_url()?>index.php/admin/C_admin" class="navbar-brand text-lt">
           <i class="fa fa-windows"></i>
           <img src="img/logo.png" alt="." class="hide">
           <span class="hidden-folded m-l-xs">Dokterku</span>
@@ -55,12 +55,12 @@
                 <img src="img/a0.jpg" alt="...">
                 <i class="on md b-white bottom"></i>
               </span>
-              <span class="hidden-sm hidden-md">John.Smith</span>
+              <span class="hidden-sm hidden-md"><?php echo $this->session->userdata('nama') ?></span>
             </a>
             <!-- dropdown -->
             <ul class="dropdown-menu animated fadeInRight w">
               <li>
-                <a ui-sref="access.signin">Logout</a>
+                <a href="<?=base_url()?>index.php/admin/C_admin/logout">Logout</a>
               </li>
             </ul>
             <!-- / dropdown -->
@@ -84,19 +84,19 @@
                     <span>Navigation</span>
                   </li>
                   <li>
-                    <a href>
+                    <a href="<?=base_url()?>index.php/C_admin/diagnosa">
                       <i class="glyphicon glyphicon-briefcase icon"></i>
                       <span>Diagnosa</span>
                     </a>
                   </li>
                   <li>
-                    <a href="#!">
+                    <a href="<?=base_url()?>index.php/C_admin/dokter">
                       <i class="icon-user icon text-success-lter"></i>
                       <span>Dokter</span>
                     </a>
                   </li>
                   <li>
-                    <a href="#!">
+                    <a href="<?=base_url()?>index.php/C_admin/pasien">
                       <i class="icon-user icon"></i>
                       <span>Pasien</span>
                     </a>

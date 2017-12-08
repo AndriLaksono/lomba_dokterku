@@ -6,6 +6,9 @@ public function __construct()
 {
     parent::__construct();
     $this->load->model('M_diagnosa');
+    if (!$this->session->userdata('id_dokter')) {
+        return redirect('C_start');
+    }
 }
 
 public function index()

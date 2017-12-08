@@ -6,6 +6,9 @@ Class C_gejala extends CI_Controller {
   {
     parent::__construct();
     $this->load->model('M_gejala');
+    if (!$this->session->userdata('id_dokter')) {
+        return redirect('C_start');
+    }
   }
 
   public function index()

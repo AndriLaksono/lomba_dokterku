@@ -37,7 +37,7 @@
                     <li><a href="#">Log pemeriksaan</a></li>
                     <li><a href="<?=base_url()?>index.php/C_auth/logout">Logout</a></li>
                 <?php elseif($this->session->userdata('id_dokter')): ?>
-                    <li><a href="#!">Dokter</a></li>
+                    <li><a href="<?=base_url()?>index.php/C_dokter">Dokter</a></li>
                     <li><a href="<?=base_url()?>index.php/C_auth/logout">Logout</a></li>
                 <?php else: ?>
                     <li><a href="<?=base_url()?>index.php/C_auth">Masuk</a></li>

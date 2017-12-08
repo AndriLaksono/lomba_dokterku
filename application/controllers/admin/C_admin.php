@@ -8,6 +8,7 @@ class C_admin extends CI_Controller
     function __construct()
     {
         parent::__construct();
+        $this->load->model("M_auth_admin");
     }
 
     public function index()
@@ -40,5 +41,30 @@ class C_admin extends CI_Controller
     {
         $this->load->view('admin/V_diagnosa_admin');
     }
+
+
+    // ========= Autentikasi admin ======== //
+    public function login()
+    {
+        $this->load->view('admin/V_login_admin');
+    }
+    public function do_login()
+    {
+        $email    = $this->input->post('email');
+        $password = $this->input->post('password');
+
+        if ($this->M_auth_admin->login_attempt($email,md5($password)) == TRUE ) {
+            return redirect('admin/C_admin');
+        }else {
+            $this->session->set_flashdata('pesan',"email atau password salah..");
+            return redirect('admin/C_admin/login');
+        }
+    }
+    public function logout()
+    {
+        $this->session->sess_destroy();
+        return redirect('admin/C_admin/login');
+    }
+
 
 } // end class
