@@ -50,7 +50,7 @@
                             <td><?=$d->username?></td>
                             <td><?=$d->alamat?></td>
                             <td><?=$d->nohp?></td>
-                            <td><?=$d->id_spesialis?></td>
+                            <td><?=$d->spesialis?></td>
                             <td><?php if($d->status==1){
                               echo 'aktif';
                             }else{

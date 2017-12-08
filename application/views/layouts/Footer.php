@@ -2,7 +2,9 @@
     <div class="container">
         <div>
             &copy; Dokterku 2017 | all right reserved
-            <span style="float:right">Developed by <a href="#!" class="white-text">Mendoan anget</a></span>
+            <span style="float:right">Developed by <a href="#!" class="white-text">Mendoan anget</a>|
+                <a href="<?=base_url()?>index.php/admin/C_admin/login">Admin</a>
+            </span>
         </div>
     </div>
 </footer>

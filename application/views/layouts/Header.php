@@ -32,7 +32,7 @@
 
             <div class="collapse navbar-collapse" id="navbar">
               <ul class="nav navbar-nav">
-                <li><a href="#!">Home</a></li>
+                <li><a href="<?=base_url()?>">Home</a></li>
                 <?php if ($this->session->userdata('id_pasien')): ?>
                     <li><a href="#">Log pemeriksaan</a></li>
                     <li><a href="<?=base_url()?>index.php/C_auth/logout">Logout</a></li>
@@ -40,6 +40,7 @@
                     <li><a href="<?=base_url()?>index.php/C_dokter">Dokter</a></li>
                     <li><a href="<?=base_url()?>index.php/C_auth/logout">Logout</a></li>
                 <?php else: ?>
+                    <li><a href="<?=base_url()?>index.php/C_start/tentang">Tentang</a></li>
                     <li><a href="<?=base_url()?>index.php/C_auth">Masuk</a></li>
                     <li><a href="<?=base_url()?>index.php/C_auth/regispage">Daftar</a></li>
                 <?php endif; ?>

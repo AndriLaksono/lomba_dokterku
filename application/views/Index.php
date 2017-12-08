@@ -147,8 +147,8 @@
         <div class="center text-center">
             <h4>Daftar Ke dokterku sekarang untuk jasmani yang lebih sehat!</h4>
             <p>
-                <a href="#!" class="btn btn-default btn-brown">Daftar</a> &nbsp;
-                <a href="#!" class="btn btn-default">Login</a>
+                <a href="<?=base_url()?>index.php/C_auth/regispage" class="btn btn-default btn-brown">Daftar</a> &nbsp;
+                <a href="<?=base_url()?>index.php/C_auth" class="btn btn-default">Login</a>
             </p>
             <br>
         </div>

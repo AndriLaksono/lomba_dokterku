@@ -16,7 +16,15 @@ Class M_admin extends CI_Model{
 
   public function GetDokter()
   {
-      return $this->db->get('dokter')->result();
+        $data = $this->db->select('*')
+                ->from('dokter')
+                ->join('spesialis','dokter.id_spesialis = spesialis.id_spesialis')
+                ->get()
+                ->result();
+        if ($data != NULL) {
+            return $data;
+        }
+        return FALSE;
   }
   public function hapusDokter($id)
   {
