@@ -90,13 +90,13 @@
                     </a>
                   </li>
                   <li>
-                    <a href="page_profile.html">
+                    <a href="#!">
                       <i class="icon-user icon text-success-lter"></i>
                       <span>Dokter</span>
                     </a>
                   </li>
                   <li>
-                    <a href>
+                    <a href="#!">
                       <i class="icon-user icon"></i>
                       <span>Pasien</span>
                     </a>

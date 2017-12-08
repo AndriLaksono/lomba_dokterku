@@ -33,11 +33,14 @@
             <div class="collapse navbar-collapse" id="navbar">
               <ul class="nav navbar-nav">
                 <li><a href="#!">Home</a></li>
-                <?php if ($this->session->userdata('pasien')): ?>
+                <?php if ($this->session->userdata('id_pasien')): ?>
                     <li><a href="#">Log pemeriksaan</a></li>
-                    <li><a href="#">Logout</a></li>
+                    <li><a href="<?=base_url()?>index.php/C_auth/logout">Logout</a></li>
+                <?php elseif($this->session->userdata('id_dokter')): ?>
+                    <li><a href="#!">Dokter</a></li>
+                    <li><a href="<?=base_url()?>index.php/C_auth/logout">Logout</a></li>
                 <?php else: ?>
-                    <li class=""><a href="#">Login</a></li>
+                    <li><a href="<?=base_url()?>index.php/C_auth">Login</a></li>
                 <?php endif; ?>
               </ul>
             </div><!-- /.navbar-collapse -->

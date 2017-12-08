@@ -29,4 +29,16 @@ class C_admin extends CI_Controller
         $this->load->view('admin/V_dokter_edit');
     }
 
+    // ==== pasien === //
+    public function pasien()
+    {
+        $this->load->view('admin/V_pasien');
+    }
+
+    // ==== diagnosa === //
+    public function diagnosa()
+    {
+        $this->load->view('admin/V_diagnosa_admin');
+    }
+
 } // end class

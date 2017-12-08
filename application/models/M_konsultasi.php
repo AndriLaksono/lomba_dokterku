@@ -1,50 +1,74 @@
 <?php
-/**
- * model Konsultasi
- */
-class M_konsultasi extends CI_Model
-{
 
-    function __construct()
-    {
-        parent::__construct();
-    }
+Class M_konsultasi extends CI_Model{
 
-    public function get_data_awal($offset=0,$where=NULL)
-    {
-        if ($where != NULL) {
-            foreach ($where as $key => $value) {
-                $this->db->where('diagnosa.id_diagnosa <>',$value);
-            }
+  public function __construct()
+  {
+    parent::__construct();
+  }
+
+  public function getData($offset = 0 ,$where = NULL)
+  {
+      if($where != NULL){
+        foreach ($where as $key => $value) {
+          $this->db->where("relasi.id_diagnosa <>", $value);
         }
+      }
 
-        $data = $this->db->select('*')
-                ->join('relasi','diagnosa.id_diagnosa = relasi.id_diagnosa')
-                ->join('gejala','gejala.id_gejala = relasi.id_gejala')
-                ->limit(1,$offset)
-                ->order_by('diagnosa.id_diagnosa')
-                ->get('diagnosa');
-        if ($data->num_rows() > 0) {
-            return $data->row();
-        }
-        return NULL;
-    } // end get data awal
+      $this->db->select('*');
+      $this->db->join('relasi','diagnosa.id_diagnosa = relasi.id_diagnosa');
+      $this->db->join('gejala','gejala.id_gejala = relasi.id_gejala');
+      $this->db->limit('1',$offset);
+      $this->db->order_by('diagnosa.id_diagnosa');
+      $data = $this->db->get('diagnosa');
 
-    public function get_jumlah_data($id_diagnosa)
-    {
-        $data = $this->db->get_where('relasi',array('id_diagnosa' => $id_diagnosa ))->num_rows();
-        return $data;
-    }
+      if($data->num_rows()>0){
+        return $data->row();
+      }
 
-    public function hasil_diagnosa($id_diagnosa)
-    {
-        return $this->db->get_where('diagnosa',array('id_diagnosa' => $id_diagnosa ))->row();
-    }
+      return 0;
+  }
 
-    public function insert_tmp_no($data)
-    {
-        $this->db->insert('tmp_no',$data);
-    }
+  public function emptytmp()
+  {
+    $this->db->empty_table('tmp_no');
+    return TRUE;
+  }
 
+  public function tmpno()
+  {
+    $data = $this->db->get('tmp_no');
+    return $data->result();
+  }
 
-} // end class
+  public function insertdata($data)
+  {
+    $data = $this->db->insert('tmp_no',$data);
+    return TRUE;
+  }
+
+  public function CountData($id_diagnosa)
+  {
+    $this->db->where('id_diagnosa',$id_diagnosa);
+    $data = $this->db->get('relasi');
+    return $data->num_rows();
+  }
+
+  public function GetResult($id_diagnosa)
+  {
+    $this->db->where('id_diagnosa',$id_diagnosa);
+    $data = $this->db->get('diagnosa');
+    return $data->result();
+  }
+
+  public function SaveLog($data)
+  {
+    $this->db->insert('log',$data);
+  }
+
+  public function GetPengobatan($id_diagnosa)
+  {
+    $this->db->where('id_diagnosa',$id_diagnosa);
+    return $this->db->get('pengobatan')->result();
+  }
+}
