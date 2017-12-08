@@ -49,7 +49,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <label for="penyakit">Penyakit</label>
-                            <input type="text" class="form-control" id="penyakit" value="Demam berdarah" disabled>
+                            <input type="text" class="form-control" id="penyakit" value="<?=$diagnosa->penyakit?>" disabled>
                         </div>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                             endif;
                           }
                       ?>
-                      <div class="col-sm-12 col-md-6 col-lg-3">
+                      <div class="col-sm-12">
                           <input type="checkbox" name="gejala[]" value="<?=$y->id_gejala?>" <?php echo $checked;?> id="<?=$y->gejala?>" class="form-control checkbox">
                           <label for="<?=$y->gejala?>"><?=$y->gejala?></label>
                       </div>

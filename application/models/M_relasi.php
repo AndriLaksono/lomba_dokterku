@@ -15,34 +15,36 @@ Class M_relasi extends CI_Model {
     $this->db->join('diagnosa','relasi.id_diagnosa=diagnosa.id_diagnosa');
     $this->db->join('gejala','relasi.id_gejala=gejala.id_gejala');
     $this->db->where('relasi.id_diagnosa',$id_diagnosa);
-    // $this->db->where('id_spesialis',$id_spesialis);
+    $this->db->where('diagnosa.id_spesialis',$this->session->userdata('spesialis'));
     $data=$this->db->get($this->table);
     return $data->result();
   }
 
   public function getgejala()
   {
-    // $this->db->where('id_spesialis',$id_spesialis);
+    $this->db->where('id_spesialis',$this->session->userdata('spesialis'));
     $data = $this->db->get($this->table1);
     return $data->result();
   }
 
   public function getdatadiagnosa()
   {
+    $this->db->where('id_spesialis',$this->session->userdata('spesialis'));
     $data = $this->db->get($this->table2);
     return $data->result();
   }
 
   public function getIDdiagnosa($id)
   {
+    $this->db->where('id_spesialis',$this->session->userdata('spesialis'));
     $this->db->where('id_diagnosa',$id);
-    $this->db->select('id_diagnosa');
+    $this->db->select('id_diagnosa,penyakit');
     return $this->db->get('diagnosa')->row();
   }
 
   public function cleanrelasi($id_diagnosa)
   {
-      // $this->db->where('id_spesialis',$id_spesialis);
+      $this->db->where('id_spesialis',$this->session->userdata('spesialis'));
       $this->db->where('id_diagnosa',$id_diagnosa);
       $this->db->delete('relasi');
   }

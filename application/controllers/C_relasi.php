@@ -34,7 +34,7 @@ Class C_relasi extends CI_Controller {
         $data = array(
           'id_diagnosa'  => $diagnosa,
           'id_gejala'    => $nilai,
-          'id_spesialis' => '1'
+          'id_spesialis' => $this->session->userdata('spesialis')
         );
         $this->M_relasi->insertrelasi($data);
       }

@@ -29,12 +29,14 @@ Class M_gejala extends CI_Model{
 
   public function getbyid($id)
   {
+    $this->db->where('id_spesialis',$this->session->userdata('spesialis'));
     $this->db->where('id_gejala',$id);
     $data=$this->db->get($this->table);
     return $data->row();
   }
   public function getAll()
     {
+      $this->db->where('id_spesialis',$this->session->userdata('spesialis'));
       $data=$this->db->get($this->table);
       return $data->result();
     }
