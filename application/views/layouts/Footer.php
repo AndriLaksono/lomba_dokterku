@@ -1,14 +1,12 @@
+<footer class="footer-client" style="background-color: #5D382C !important;">
+    <div class="container">
+        <div>
+            &copy; Dokterku 2017 | all right reserved
+            <span style="float:right">Developed by <a href="#!" class="white-text">Mendoan anget</a></span>
+        </div>
+    </div>
+</footer>
 
-        <section class="section-dark" style="height:150px !important">
-            <div class="container">
-                <footer style="color:white">
-                    <div>&copy; Dokterku all right reserved</div>
-                    <div style="float:right">
-                        developed by <a href="#!" style="white-text">Mendoan anget</a>
-                    </div>
-                </footer>
-            </div>
-        </section>
         <script src="<?=base_url()?>assets/bootstrap/js/bootstrap.min.js" charset="utf-8"></script>
     </body>
 </html>

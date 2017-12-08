@@ -8,5 +8,30 @@ a.icon-8-depan > p > img:hover{
 }
 
 a.icon-8-depan{
+    background-color: none;
     transition: 1s all;
+}
+
+.section-white{
+    border-top:1px solid #eaeaea;
+    padding:90px 0
+}
+.width-100{
+    width:100%
+}
+.section-white{
+    background-color:#fff
+}
+.section-8-icon{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.section-footer{
+    height:150px !important;
+}
+.footer-client{
+    color:white;
+    height:70px !important;
+    background:grey;
+    line-height: 70px !important;
 }

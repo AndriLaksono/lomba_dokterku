@@ -65,7 +65,7 @@
     </section>
 </div>
 
-<section class="section-dark" style="background-color:#5D382C">
+<section class="section-8-icon" style="background-color:#5D382C">
     <div class="container">
         <div class="center text-center">
             <h2 class="white-text">DOKTERKU</h2>
