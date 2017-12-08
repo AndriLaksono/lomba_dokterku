@@ -30,5 +30,21 @@ class M_konsultasi extends CI_Model
         return NULL;
     } // end get data awal
 
+    public function get_jumlah_data($id_diagnosa)
+    {
+        $data = $this->db->get_where('relasi',array('id_diagnosa' => $id_diagnosa ))->num_rows();
+        return $data;
+    }
+
+    public function hasil_diagnosa($id_diagnosa)
+    {
+        return $this->db->get_where('diagnosa',array('id_diagnosa' => $id_diagnosa ))->row();
+    }
+
+    public function insert_tmp_no($data)
+    {
+        $this->db->insert('tmp_no',$data);
+    }
+
 
 } // end class

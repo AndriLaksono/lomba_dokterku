@@ -1,8 +1,8 @@
 <?php $this->load->view('layouts/Header') ?>
-<section class="section-dark" style="background-color:#5D382C;height:200px">
+<section class="section-dark" style="background-color:#5D382C;height:100px;margin-top:-50px !important">
     <div class="container">
         <p class="text-center">
-            <h1 style="color:white !important">Konsultasi</h1>
+            <h3 style="color:white !important">Konsultasi</h3>
         </p>
     </div>
 </section>
@@ -11,7 +11,7 @@
     <section class="section-white">
         <div class="center text-center">
             <h3>Apakah anda mengalami penyakit dibawah ini?</h3>
-            <h5>Demam</h5>
+            <h5><?php echo $gejala->gejala ?></h5>
             <p>
                 <form action="<?=base_url()?>index.php/C_konsultasi/pilih" method="post">
                     <p style="display:none">

@@ -1,8 +1,11 @@
 
-        <section class="section-dark">
-            <div class="container" sytle="color:white !important">
+        <section class="section-dark" style="height:150px !important">
+            <div class="container">
                 <footer style="color:white">
-                    <div>&copy; Mendoananget</div>
+                    <div>&copy; Dokterku all right reserved</div>
+                    <div style="float:right">
+                        developed by <a href="#!" style="white-text">Mendoan anget</a>
+                    </div>
                 </footer>
             </div>
         </section>
