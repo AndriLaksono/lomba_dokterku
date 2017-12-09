@@ -10,7 +10,7 @@ class C_admin extends CI_Controller
         parent::__construct();
         $this->load->model("M_auth_admin");
         $this->load->model("M_admin");
-        if ($this->session->userdata('id_admin')) {
+        if (!$this->session->userdata('id_admin')) {
             return redirect('C_start');
         }
     }
