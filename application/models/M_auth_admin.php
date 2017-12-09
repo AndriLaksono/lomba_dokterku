@@ -20,6 +20,7 @@ class M_auth_admin extends CI_Model
             $this->session->set_userdata('email',$datax->email);
             $this->session->set_userdata('username',$datax->username);
             $this->session->set_userdata('nama',$datax->nama);
+            $this->session->set_userdata('status_admin','masuk');
             return TRUE;
         }else {
             return FALSE;

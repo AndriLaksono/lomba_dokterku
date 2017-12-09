@@ -10,14 +10,22 @@ class C_admin extends CI_Controller
         parent::__construct();
         $this->load->model("M_auth_admin");
         $this->load->model("M_admin");
-        if (!$this->session->userdata('id_admin')) {
-            return redirect('C_start');
+        if ($this->session->userdata('status_admin') != 'masuk') {
+            return $this->login();
         }
     }
 
     public function index()
     {
-        $this->load->view('admin/Index_admin');
+        if ($this->session->userdata('status_admin') != 'masuk') {
+            return $this->login();
+        }
+        
+        $data['penyakit'] = $this->M_admin->countdata('diagnosa');
+        $data['dokter'] = $this->M_admin->countdata('dokter');
+        $data['pasien'] = $this->M_admin->countdata('pasien');
+
+        $this->load->view('admin/Index_admin', $data);
     }
 
     // ==== dokter ==== //

@@ -27,7 +27,7 @@
           <div class="row row-sm text-center">
             <div class="col-xs-4">
               <div class="panel padder-v item">
-                <div class="h1 text-info font-thin h1">51</div>
+                <div class="h1 text-info font-thin h1"><?=$penyakit?></div>
                 <span class="text-muted text-xs">Penyakit</span>
                 <div class="top text-right w-full">
                   <i class="fa fa-caret-down text-warning m-r-sm"></i>
@@ -36,7 +36,7 @@
             </div>
             <div class="col-xs-4">
               <div class="panel padder-v item">
-                <div class="h1 text-info font-thin h1">8</div>
+                <div class="h1 text-info font-thin h1"><?=$dokter?></div>
                 <span class="text-muted text-xs">Dokter spesialis</span>
                 <div class="top text-right w-full">
                   <i class="fa fa-caret-down text-warning m-r-sm"></i>
@@ -45,7 +45,7 @@
             </div>
             <div class="col-xs-4">
               <div class="panel padder-v item">
-                <div class="h1 text-info font-thin h1">81</div>
+                <div class="h1 text-info font-thin h1"><?=$pasien?></div>
                 <span class="text-muted text-xs">Pasien</span>
                 <div class="top text-right w-full">
                   <i class="fa fa-caret-down text-warning m-r-sm"></i>

@@ -7,10 +7,10 @@ Class M_admin extends CI_Model{
       parent::__construct();
   }
   public function CountDiagnosa(){
-      $this->db->select("relasi.id_diagnosa,diagnosa.penyakit, COUNT(relasi.id_diagnosa) as jumlah ");
-      $this->db->join('diagnosa','relasi.id_diagnosa = diagnosa.id_diagnosa');
+      $this->db->select("log.id_diagnosa,diagnosa.penyakit, COUNT(log.id_diagnosa) as jumlah ");
+      $this->db->join('diagnosa','log.id_diagnosa = diagnosa.id_diagnosa');
       $this->db->limit(5);
-      $data = $this->db->get('relasi');
+      $data = $this->db->get('log');
       return $data->result();
   }
 
@@ -73,5 +73,10 @@ Class M_admin extends CI_Model{
   public function updatepasien($id,$status)
   {
       $this->db->query("UPDATE pasien SET status = ".$status." WHERE id_pasien = ".$id."");
+  }
+
+  public function countdata($tabel)
+  {
+      return $this->db->get($tabel)->num_rows();
   }
 }
